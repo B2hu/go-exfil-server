@@ -20,6 +20,7 @@ A lightweight, Go-based HTTP file collection server designed for authorized pene
 
 - Go 1.23.0 or later
 - Network access to deploy the server
+- docker & docker compose for docker installation
 
 ### Build from Source
 
@@ -38,6 +39,22 @@ go mod download
 ```bash
 go build -o file-upload-server main.go
 ```
+### Docker installation
+1. build the image
+```bash
+git clone https://github.com/B2hu/file-upload.git && cd file-upload
+docker build . -t exfil-server
+```
+2. run the container
+```bash
+mkdir 755 ./uploads # access zip folder for docker host
+docker run -p 8080:8080 -v ./uploads:/app/uploads exfil-server
+
+# if you want the container to start on a different port use :
+export PORT=your_port_here
+docker run -p 8080:$PORT -v ./uploads:/app/uploads exfil-server -port $PORT 
+```
+
 
 ### Quick Start
 
