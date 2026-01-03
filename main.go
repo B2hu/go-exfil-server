@@ -2,6 +2,8 @@ package main
 
 import (
 	"archive/zip"
+	"flag"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -11,6 +13,9 @@ import (
 
 
 func main() {
+	port := flag.Int("port", 8080, "Server port to listen on")
+	flag.Parse()
+
 	router := gin.Default()
 	router.MaxMultipartMemory = 8 << 20 // 8 MiB
 	router.Static("/", "./public")
@@ -69,5 +74,5 @@ func main() {
 		c.String(http.StatusOK, "All files zipped successfully")
 	})
 
-	router.Run(":8080")
+	router.Run(fmt.Sprintf(":%d", *port))
 }
