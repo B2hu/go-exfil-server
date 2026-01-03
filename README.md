@@ -235,3 +235,16 @@ Ensure the server has write permissions for the `uploads/` directory. The server
 ### Large File Uploads
 
 For very large files, ensure sufficient disk space and consider increasing `MaxMultipartMemory` or implementing streaming directly to ZIP.
+
+## License
+
+[Specify your license here]
+
+## Contributing
+
+[Specify contribution guidelines if applicable]
+
+## Disclaimer
+
+This tool is provided for educational and authorized security testing purposes only. Users must ensure they have explicit written authorization before using this tool against any system. Unauthorized access to computer systems violates laws in many jurisdictions. The developers assume no responsibility for misuse of this software.
+
