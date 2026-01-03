@@ -184,7 +184,8 @@ The default port is `8080` if no flag is specified.
 
 ```
 file-upload/
-├── main.go              # Main server implementation
+├── main.go    
+├── Dockerfile          # Main server implementation
 ├── go.mod               # Go module dependencies
 ├── go.sum               # Go module checksums
 ├── public/
