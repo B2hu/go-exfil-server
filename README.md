@@ -43,12 +43,15 @@ go build -o file-upload-server main.go
 1. build the image
 ```bash
 git clone https://github.com/B2hu/file-upload.git && cd file-upload
-docker build . -t exfil-server
+docker build . -t exfil-server:1.0
+
+# or pull directly from my docker hub repo
+docker pull b2hu/exfil-sever:1.0
 ```
 2. run the container
 ```bash
 mkdir 755 ./uploads # access zip folder for docker host
-docker run -p 8080:8080 -v ./uploads:/app/uploads exfil-server
+docker run -p 8080:8080 -v ./uploads:/app/uploads exfil-server # or b2hu/exfil-server:1.0
 
 # if you want the container to start on a different port use :
 export PORT=your_port_here
